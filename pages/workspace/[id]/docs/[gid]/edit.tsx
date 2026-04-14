@@ -484,7 +484,7 @@ const EditDoc: pageWithLayout<any> = ({ roles, departments, document, canEdit, c
             </div>
 
             <div className="lg:col-span-1">
-              <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-sm border border-zinc-200 dark:border-zinc-700 p-6 sticky top-6">
+              <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-sm border border-zinc-200 dark:border-zinc-700 p-6 sticky top-6 z-10">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <IconLock className="w-5 h-5 text-primary" />
