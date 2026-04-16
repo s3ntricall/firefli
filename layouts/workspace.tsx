@@ -36,6 +36,7 @@ import {
   Alert02Icon,
   ServerStack01Icon,
   DiscordIcon,
+  Contact01Icon,
 } from "@hugeicons/core-free-icons";
 import {
   IconTrophy,
@@ -465,7 +466,7 @@ const workspace: LayoutProps = ({ children }) => {
 				staffItems.push({
 					label: "Directory",
 					href: `/workspace/${id}/directory`,
-					icon: UserGroupIcon,
+					icon: Contact01Icon,
 					active: isOnDirectoryPage,
 				});
 			}
