@@ -95,10 +95,10 @@ const ExternalServices: React.FC<ExternalServicesProps> & { title: string } = ({
           setRobloxApiKey("");
           setRobloxApiKeyStatus("valid");
         }
-        triggerToast.success("External services settings saved successfully!");
+        triggerToast.success("External settings saved!");
       } else {
         const error = await response.json();
-        triggerToast.error(error.message || "Failed to save settings");
+        triggerToast.error(error.message || "Failed to save settings.");
       }
     } catch (error) {
       triggerToast.error("Failed to save settings");
@@ -341,8 +341,8 @@ const ExternalServices: React.FC<ExternalServicesProps> & { title: string } = ({
               {" "}to create or update your API key.
             </p>
             <ul className="text-xs text-zinc-500 dark:text-zinc-400 list-disc list-inside space-y-1 mt-1">
-              <li><strong>Groups</strong> - <strong>group:read</strong> &amp; <strong>group:write</strong> for promotions, demotions, and rank changes.</li>
-              <li><strong>Users</strong> - <strong>user.social:read</strong> required for usernames/displaynames.</li>
+              <li><strong>Groups</strong> - <strong>group:read</strong> required for rank refreshing.</li>
+              <li>(Optional) <strong>Ranking</strong> - <strong>group:write</strong> required for promotions, demotions, and rank changes.</li>
             </ul>
           </div>
 
