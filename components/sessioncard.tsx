@@ -1120,6 +1120,7 @@ const AutocompleteInput: React.FC<{
               placeholder={placeholder}
               className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary dark:bg-zinc-700 dark:border-zinc-600 dark:text-white"
               disabled={isSubmitting}
+              autoComplete="off"
               autoFocus
             />
 
