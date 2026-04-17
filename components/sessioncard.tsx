@@ -428,7 +428,7 @@ const SessionModal: React.FC<SessionModalProps> = ({
   if (colorsReady === false) {
     return (
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4 overflow-x-hidden"
         onClick={(e) => {
           if (e.target === e.currentTarget && !isMobile()) {
             onClose();
@@ -499,24 +499,24 @@ const SessionModal: React.FC<SessionModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 lg:pl-[280px]"
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center sm:pt-16"
       onClick={(e) => {
         if (e.target === e.currentTarget && !isMobile()) {
           onClose();
         }
       }}
     >
-      <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-xl w-full max-w-3xl mx-auto max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-zinc-700">
-          <div className="flex items-center gap-3">
+        <div className="bg-white dark:bg-zinc-800 rounded-none sm:rounded-xl shadow-xl w-full max-w-3xl overflow-y-auto overflow-x-hidden fixed top-12 bottom-16 left-0 right-0 sm:relative sm:inset-auto sm:h-auto sm:max-h-[90vh] sm:mx-4 lg:mx-auto">
+        <div className="flex items-start sm:items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-zinc-700 gap-3">
+          <div className="flex items-start sm:items-center gap-3 min-w-0 flex-1">
             <div className="bg-primary/10 p-2 rounded-lg">
               <IconCalendarEvent className="w-5 h-5 text-primary" />
             </div>
-            <div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-white">
+            <div className="min-w-0">
+              <h2 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-white break-words">
                 {session.name || session.sessionType.name}
               </h2>
-              <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
                 <IconClock className="w-4 h-4" />
                 {sessionDate.toLocaleDateString()} at{" "}
                 {sessionDate.toLocaleTimeString(undefined, {
@@ -565,13 +565,13 @@ const SessionModal: React.FC<SessionModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
+            className="p-2 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors flex-shrink-0"
           >
             <IconX className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-6">
+        <div className="p-4 sm:p-6 space-y-6">
           {session.sessionType.description && (
             <div>
               <h3 className="text-lg font-medium text-zinc-900 dark:text-white mb-3">
@@ -630,9 +630,9 @@ const SessionModal: React.FC<SessionModalProps> = ({
                             );
                             const { username, picture: userPicture, userId: assignedUserId } = getAssignedDisplay(assignedUser);
                             return (
-                              <div key={i} className="flex items-center gap-2">
-                                <span className="text-sm text-zinc-600 dark:text-zinc-400 w-16">Slot {i + 1}:</span>
-                                <div className="flex-1">
+                              <div key={i} className="flex flex-col sm:flex-row sm:items-center gap-2">
+                                <span className="text-sm text-zinc-600 dark:text-zinc-400 sm:w-16 sm:flex-shrink-0">Slot {i + 1}:</span>
+                                <div className="flex-1 min-w-0">
                                   <RoleButton
                                     currentValue={username || ""}
                                     onValueChange={(value) => handleSlotClaim(slotData.id, i, value)}
@@ -1107,7 +1107,7 @@ const AutocompleteInput: React.FC<{
   if (isEditing) {
     return (
       <div className="relative">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2">
           <div className="relative flex-1">
             <input
               ref={inputRef}
@@ -1166,20 +1166,22 @@ const AutocompleteInput: React.FC<{
               </div>
             )}
           </div>
-          <button
-            onClick={handleSubmit}
-            disabled={isSubmitting}
-            className="px-3 py-2 text-sm bg-primary text-white rounded-md hover:bg-primary/90 disabled:opacity-50"
-          >
-            Save
-          </button>
-          <button
-            onClick={handleCancel}
-            disabled={isSubmitting}
-            className="px-3 py-2 text-sm bg-zinc-500 text-white rounded-md hover:bg-zinc-600 disabled:opacity-50"
-          >
-            Cancel
-          </button>
+          <div className="flex gap-2 sm:flex-shrink-0">
+            <button
+              onClick={handleSubmit}
+              disabled={isSubmitting}
+              className="flex-1 sm:flex-none px-3 py-2 text-sm bg-primary text-white rounded-md hover:bg-primary/90 disabled:opacity-50"
+            >
+              Save
+            </button>
+            <button
+              onClick={handleCancel}
+              disabled={isSubmitting}
+              className="flex-1 sm:flex-none px-3 py-2 text-sm bg-zinc-500 text-white rounded-md hover:bg-zinc-600 disabled:opacity-50"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     );
