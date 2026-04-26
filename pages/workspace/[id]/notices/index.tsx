@@ -649,7 +649,7 @@ const Notices: pageWithLayout<NoticesPageProps> = ({
                       }`}
                     >
                       <IconCalendarTime className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-                      Holiday
+                      <span className="hidden sm:inline">Holiday</span>
                     </button>
 
                     <button
@@ -664,7 +664,7 @@ const Notices: pageWithLayout<NoticesPageProps> = ({
                       }`}
                     >
                       <IconBug className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-                      Sickness
+                      <span className="hidden sm:inline">Sickness</span>
                     </button>
 
                     <button
@@ -679,7 +679,7 @@ const Notices: pageWithLayout<NoticesPageProps> = ({
                       }`}
                     >
                       <IconHome className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-                      Personal
+                      <span className="hidden sm:inline">Personal</span>
                     </button>
 
                     <button
@@ -694,7 +694,7 @@ const Notices: pageWithLayout<NoticesPageProps> = ({
                       }`}
                     >
                       <IconBook className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-                      School
+                      <span className="hidden sm:inline">School</span>
                     </button>
 
                     <button
@@ -709,7 +709,7 @@ const Notices: pageWithLayout<NoticesPageProps> = ({
                       }`}
                     >
                       <IconPlus className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
-                      Other
+                      <span className="hidden sm:inline">Other</span>
                     </button>
                   </div>
                 </div>
@@ -1184,7 +1184,7 @@ const Notices: pageWithLayout<NoticesPageProps> = ({
                 activeNotices.length === 0 &&
                 revokedNotices.length === 0 && (
                   <div className="rounded-xl shadow-sm p-12 text-center">
-                    <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                       <IconCalendarTime className="w-8 h-8 text-zinc-400" />
                     </div>
                     <h3 className="text-lg font-medium text-zinc-900 dark:text-white mb-2">
