@@ -362,7 +362,7 @@ const Login: NextPage = () => {
 				<div>
 					<p className="font-bold text-2xl dark:text-white">Let's get started</p>
 					<p className="text-md -mt-1 text-zinc-500 dark:text-zinc-200">
-						To configure your Firefli instance, we'll need some information
+						To setup your Firefli workspace, we'll need some information.
 					</p>
 					<FormProvider {...methods}>
 						<form className="mt-2" onSubmit={handleSubmit(nextSlide)}>
