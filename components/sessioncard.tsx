@@ -428,7 +428,7 @@ const SessionModal: React.FC<SessionModalProps> = ({
   if (colorsReady === false) {
     return (
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4 overflow-x-hidden"
+        className="fixed inset-0 bg-black/25 flex items-center justify-center z-50 p-2 sm:p-4 overflow-x-hidden"
         onClick={(e) => {
           if (e.target === e.currentTarget && !isMobile()) {
             onClose();
@@ -499,7 +499,7 @@ const SessionModal: React.FC<SessionModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center sm:pt-16"
+      className="fixed inset-0 bg-black/25 z-50 flex items-center justify-center sm:pt-16"
       onClick={(e) => {
         if (e.target === e.currentTarget && !isMobile()) {
           onClose();
